@@ -6,6 +6,5 @@ export interface CreateOrderRequestDto {
 
 interface CreateOrderItemRequestDto {
   name: string;
-  description: string;
   quantity: number;
 }
