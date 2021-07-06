@@ -1,0 +1,19 @@
+version: "3"
+
+services:
+  nest-uow:
+    image: node:14
+    container_name: nest-uow
+    working_dir: /app
+    command: ['npm','run','start:dev']
+    volumes:
+      - ./:/app
+    ports:
+      - 3000:3000
+    environment:
+      - "DB_HOST=192.168.1.2"
+      - "DB_PORT=3306"
+      - "DB_NAME=ordersdb"
+      - "DB_USER=root"
+      - "DB_PASSWORD=root"
+
