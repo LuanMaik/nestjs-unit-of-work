@@ -85,7 +85,7 @@ export class UnitOfWorkService {
 ```
 
 ## How to create a custom repository
-My approach **doesn't** work with TypeORM repositories, you need to implement your own repository or generate it from TypeORM EntityManager shared.
+My approach **doesn't** work with default TypeORM repositories provided by injection, you need to implement your own repository or generate it from TypeORM EntityManager shared.
 
 
 ```typescript
