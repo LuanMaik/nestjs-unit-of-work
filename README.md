@@ -16,7 +16,7 @@ This repository shows how to implement unit of work pattern in NestJs Framework 
 
 ## Running this example
 
-The `database.sql` file has the database structure necessery to run this example.
+The `database.sql` file has the database structure necessary to run this example.
 
 The configuration of database connection is set in `src/app.module.ts`.
 
@@ -132,7 +132,7 @@ import { Item } from '../models/item.model';
 
 @Injectable()
 export class OrderService {
-  constructor(private readonly orderRepository: OrderRepository) {} // <-- the custo repo created before
+  constructor(private readonly orderRepository: OrderRepository) {} // <-- the custom repo created before
 
   async getAll(): Promise<Order[]> {
     return this.orderRepository.getAll();
@@ -177,7 +177,7 @@ import { UnitOfWorkService } from '../../core/services/unit-of-work.service';
 @Controller('/v1/order')
 export class OrderController {
   constructor(
-    private readonly unitOfWork: UnitOfWorkService,
+    private readonly unitOfWork: UnitOfWorkService, // <-- inject the UOW to handle transaction operation
     private readonly orderService: OrderService,
   ) {}
 
